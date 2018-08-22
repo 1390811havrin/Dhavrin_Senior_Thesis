@@ -6,7 +6,9 @@ namespace CSharpTestClient
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("What's Up!");
+            var con = new ConnectIt();
+            con.connect("Bitches");
         }
     }
 }

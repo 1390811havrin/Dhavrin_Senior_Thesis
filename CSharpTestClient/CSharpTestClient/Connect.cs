@@ -3,12 +3,13 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Configuration;
 
 namespace CSharpTestClient
 {
-    class Connect
+    class ConnectIt
     {
-        static void connect(String server, String message)
+        public void connect( String message)
         {
             try
             {
@@ -16,8 +17,9 @@ namespace CSharpTestClient
                 // Note, for this client to work you need to have a TcpServer 
                 // connected to the same address as specified by the server, port
                 // combination.
+                string server = "127.0.0.1";
                 Int32 port = 13000;
-                TcpClient client = new TcpClient(server, port);
+                TcpClient client = new TcpClient(server,port );
 
                 // Translate the passed message into ASCII and store it as a Byte array.
                 Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
